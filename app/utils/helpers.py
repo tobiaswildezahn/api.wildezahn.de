@@ -1,5 +1,5 @@
 import re
-from typing import Union, List
+from typing import Union, List, Dict
 import h3
 
 def parse_speed(speed: Union[str, int, float, List[Union[str, int, float]]]) -> int:

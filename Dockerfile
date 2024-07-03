@@ -1,5 +1,6 @@
 # Verwenden Sie ein offizielles Python-Runtime-Image als Basis
 FROM python:3.12-slim
+
 # Setzen Sie das Arbeitsverzeichnis im Container
 WORKDIR /app
 
@@ -20,11 +21,21 @@ ENV C_INCLUDE_PATH=/usr/include/gdal
 ENV FLASK_APP=app
 ENV FLASK_RUN_HOST=0.0.0.0
 
+# Debug: Zeige den Inhalt des aktuellen Verzeichnisses
+RUN echo "Current directory contents:" && ls -la
+
 # Kopieren Sie die Projektdateien in das Arbeitsverzeichnis
 COPY . /app
 
+# Debug: Zeige den Inhalt des /app Verzeichnisses
+RUN echo "Contents of /app:" && ls -lR /app
+
 # Kopieren Sie die Datendatei in den Container
 COPY data/hamburg_road_network.graphml /app/data/
+
+# Debug: Zeige den Inhalt der wichtigen Python-Dateien
+RUN echo "Contents of helpers.py:" && cat /app/app/utils/helpers.py
+RUN echo "Contents of isochrone.py:" && cat /app/app/models/isochrone.py
 
 # Installieren Sie die benötigten Pakete
 RUN pip install --no-cache-dir -r requirements.txt

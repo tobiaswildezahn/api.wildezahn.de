@@ -1,5 +1,5 @@
 from heapq import heappush, heappop
-from typing import Dict, Union
+from typing import Dict, Union, List
 import h3
 
 def calculate_cell_travel_times(point, h3_resolution, edge_speeds_kmh):
