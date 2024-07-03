@@ -13,7 +13,7 @@ def parse_speed(speed: Union[str, int, float, List[Union[str, int, float]]]) -> 
         return int(speed)
     return 30
 
-def process_road_speeds(resolution: int) -> Dict[str, float]:
+def process_road_speeds(G, resolution: int) -> Dict[str, float]:
     edge_speeds = {}
     for _, _, data in G.edges(data=True):
         speed = parse_speed(data.get("maxspeed", 30))

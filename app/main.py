@@ -10,7 +10,7 @@ from app.models import calculate_cell_travel_times, create_isochrone, h3_to_geoj
 app.logger.setLevel(logging.DEBUG)
 
 # Laden Sie das Graph einmal beim Start der Anwendung
-G = ox.load_graphml("/app/data/hamburg_road_network.graphml")
+G = ox.load_graphml("data/hamburg_road_network.graphml")
 
 @app.route('/')
 def hello():
