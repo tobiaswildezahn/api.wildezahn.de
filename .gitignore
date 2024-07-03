@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtuelle Umgebungen
+venv/
+ENV/
+
+# Betriebssystem-Dateien
+.DS_Store
+Thumbs.db
+
+# IDEs und Editoren
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Projektspezifische Dateien
+*.log
+*.sqlite3
+
+# Sensitive Daten
+.env
+config.ini
